@@ -249,3 +249,53 @@ footer p {
         padding: 70px 20px;
     }
 }
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.coming-soon-box {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.coming-soon-box p {
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 0;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.info-section {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.section-desc {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    color: #4a5568;
+}
+
+.info-section h2 {
+    text-align: center;
+}
+
+.card {
+    text-align: left;
+}
