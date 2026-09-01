@@ -8,19 +8,14 @@
         @import url('https://googleapis.com');
 
         @font-face {
-            font-family: 'Extenda';
-            src: url('/fonts/Extenda-20Micro.woff2') format('woff2');
-            font-weight: normal;
-        }
-        @font-face {
             font-family: 'Garet';
-            src: url('/fonts/Garet-Regular.woff2') format('woff2');
-            font-weight: normal;
+            src: url('/home/fonts/Garet-Book.ttf') format('truetype'),
+                 url('/home/fonts/Garet-Heavy.ttf') format('truetype');
+            font-weight: 700;
         }
 
         :root {
             --primary: #071D6A;
-            --bg-dark: #04103b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,20 +48,20 @@
         }
 
         h1 {
-            font-family: 'Extenda', sans-serif;
-            font-size: clamp(4rem, 15vw, 9rem);
+            font-weight: 700;
+            font-size: clamp(3rem, 12vw, 6.5rem);
             text-transform: uppercase;
-            line-height: 0.85;
-            letter-spacing: -0.03em;
-            margin-bottom: 15px;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            margin-bottom: 20px;
             opacity: 0;
             transform: translateY(40px);
             animation: fadeInUp 0.8s cubic-bezier(0.2, 1, 0.2, 1) forwards;
         }
 
         p {
-            font-size: clamp(0.9rem, 3vw, 1.2rem);
-            letter-spacing: 0.1em;
+            font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             opacity: 0;
             transform: translateY(20px);
@@ -105,7 +100,6 @@
             to { left: 0; }
         }
     </style>
-
     <script>
         setTimeout(function() {
             window.location.href = "./home/";
@@ -116,7 +110,7 @@
     <div class="ambient-glow"></div>
     <div class="content">
         <h1>Samet<br>na GPB</h1>
-        <p>PRAVDA A LÁSKA!</p>
+        <p>Pravda a láska!</p>
         <div class="loader-bar">
             <div class="loader-progress"></div>
         </div>
