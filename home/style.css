@@ -509,6 +509,41 @@ footer p {
     .section {
         padding: 70px 20px;
     }
+
+    .card {
+        padding: 24px 20px !important;
+    }
+
+    .email-box {
+        flex-direction: column !important;
+        gap: 6px !important;
+        align-items: flex-start !important;
+        padding: 12px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .email-text {
+        font-size: 0.9rem !important;
+        word-break: break-all !important;
+    }
+
+    .copy-hint {
+        font-size: 0.7rem !important;
+        opacity: 0.7;
+    }
+
+    .dark-section .container > div {
+        flex-direction: column !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+    
+    .dark-section .btn {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+    }
 }
 
 .footer-socials {
