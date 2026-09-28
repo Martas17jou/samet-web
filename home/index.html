@@ -125,6 +125,14 @@ Společně se podíváme na témata, která propojují historii, současnost a s
         </div>
     </footer>
 
-
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('mobileSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
