@@ -8,51 +8,86 @@
     <link rel="icon" href="logo.png" type="image/x-icon">
     
     <style>
+        body {
+            background-color: var(--light-bg);
+        }
+
+        .page-header {
+            padding-top: 160px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, #071D6A 0%, #030e33 100%);
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-top: 10px;
+            color: var(--white);
+        }
+
+        .thank-you-section {
+            background-color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(7, 29, 106, 0.05);
+        }
+
+        .thank-you-section .section-desc {
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .sponsors-content {
+            padding: 80px 20px;
+        }
+
         .partner-tier {
-            margin-bottom: 70px;
+            margin-bottom: 80px;
             text-align: center;
         }
+
         .partner-tier h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             color: var(--primary);
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
+            margin-bottom: 40px;
+            font-weight: 700;
+            opacity: 0.9;
         }
-        .partner-tier h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 25%;
-            width: 50%;
-            height: 2px;
-            background: var(--primary);
-        }
+
         .logo-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
+
         .logo-box {
             background: #ffffff;
-            border: 1px solid rgba(7, 29, 106, 0.1);
-            border-radius: 16px;
+            border: 1px solid rgba(7, 29, 106, 0.08);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(7, 29, 106, 0.02);
-            transition: none !important;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(7, 29, 106, 0.04);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .logo-box:hover {
-            transform: none !important;
-            box-shadow: 0 4px 15px rgba(7, 29, 106, 0.02) !important;
+            border-color: rgba(7, 29, 106, 0.25);
+            box-shadow: 0 12px 35px rgba(7, 29, 106, 0.08);
         }
+
         .logo-box img {
             max-width: 100%;
             max-height: 100%;
@@ -60,14 +95,18 @@
             filter: grayscale(0%) !important;
             opacity: 1 !important;
         }
-        
-        .tier-general .logo-box { width: 340px; height: 160px; }
-        .tier-main .logo-box { width: 240px; height: 120px; }
-        .tier-official .logo-box { width: 180px; height: 90px; }
+
+        .tier-general .logo-box { width: 360px; height: 160px; }
+        .tier-main .logo-box { width: 260px; height: 120px; }
+        .tier-official .logo-box { width: 190px; height: 95px; }
         
         @media (max-width: 768px) {
+            .page-header {
+                padding-top: 130px;
+                padding-bottom: 40px;
+            }
             .logo-grid {
-                gap: 15px !important;
+                gap: 20px !important;
                 padding: 0 10px !important;
             }
             .tier-general .logo-box,
@@ -75,16 +114,17 @@
             .tier-official .logo-box {
                 width: 100% !important;
                 max-width: 290px !important;
-                height: 110px !important;
-                padding: 15px !important;
+                height: 120px !important;
+                padding: 20px !important;
             }
             .logo-box img {
-                max-height: 70px !important;
+                max-height: 75px !important;
             }
             .partner-tier {
-                margin-bottom: 40px !important;
+                margin-bottom: 50px !important;
             }
         }
+
     </style>
 </head>
 <body>
@@ -152,25 +192,27 @@
         </div>
     </header>
 
-    <section class="section info-section" style="padding-bottom: 20px;">
+    <section class="thank-you-section">
         <div class="container">
             <p class="section-desc">Realizace studentského festivalu <strong>Samet na GPB</strong> by nebyla možná bez laskavé finanční, materiální a organizační podpory našich partnerů. Velmi si vážíme každého, kdo pomáhá mladým lidem rozvíjet myšlenky svobody, demokracie a občanské odpovědnosti.</p>
         </div>
     </section>
 
-    <main class="section" style="background-color: var(--light-bg); padding-top: 60px;">
+    <main class="sponsors-content">
         <div class="container">
-
+            
             <div class="partner-tier tier-general">
                 <h3>Děkujeme!</h3>
                 <div class="logo-grid">
-                    <a href="#" class="logo-box" target="_blank" rel="noopener">
-                        <img src="partneri/hyundai1.png" alt="Hyundai">
-                    </a>
+                    <div class="logo-box">
+                        <img src="img/partneri/hyundai.png" alt="Hyundai">
+                    </div>
                 </div>
             </div>
+
         </div>
     </main>
+
 
 <footer id="kontakt">
         <div class="container">
