@@ -8,13 +8,6 @@
     <link rel="icon" href="logo.png" type="image/x-icon">
     
     <style>
-        .page-header {
-            padding-top: 160px;
-            padding-bottom: 40px;
-            text-align: center;
-            background: linear-gradient(135deg, #071D6A 0%, #030e33 100%);
-            color: var(--white);
-        }
         .partner-tier {
             margin-bottom: 70px;
             text-align: center;
@@ -53,38 +46,44 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            transition: var(--transition);
             box-shadow: 0 4px 15px rgba(7, 29, 106, 0.02);
+            transition: none !important;
         }
         .logo-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(7, 29, 106, 0.08);
-            border-color: rgba(7, 29, 106, 0.3);
+            transform: none !important;
+            box-shadow: 0 4px 15px rgba(7, 29, 106, 0.02) !important;
         }
         .logo-box img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-        .logo-box:hover img {
-            filter: grayscale(0%);
-            opacity: 1;
+            filter: grayscale(0%) !important;
+            opacity: 1 !important;
         }
         
-        .tier-general .logo-box {
-            width: 340px;
-            height: 160px;
-        }
-        .tier-main .logo-box {
-            width: 240px;
-            height: 120px;
-        }
-        .tier-official .logo-box {
-            width: 180px;
-            height: 90px;
+        .tier-general .logo-box { width: 340px; height: 160px; }
+        .tier-main .logo-box { width: 240px; height: 120px; }
+        .tier-official .logo-box { width: 180px; height: 90px; }
+        
+        @media (max-width: 768px) {
+            .logo-grid {
+                gap: 15px !important;
+                padding: 0 10px !important;
+            }
+            .tier-general .logo-box,
+            .tier-main .logo-box,
+            .tier-official .logo-box {
+                width: 100% !important;
+                max-width: 290px !important;
+                height: 110px !important;
+                padding: 15px !important;
+            }
+            .logo-box img {
+                max-height: 70px !important;
+            }
+            .partner-tier {
+                margin-bottom: 40px !important;
+            }
         }
     </style>
 </head>
