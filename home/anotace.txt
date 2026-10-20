@@ -21,7 +21,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
   barva: "#0000ff",
   odHod: 16, odMin: 0,
   doHod: 17, doMin: 0,
-  popis: "toto se zobrazí když to rozkliknou"
+  popis: "O hudební zážitek v odpoledních hodinách se postará lokální studentská kapela Roubos!"
 }
  
 {
@@ -46,7 +46,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
   barva: "#0000ff",
   odHod: 17, odMin: 30,
   doHod: 18, doMin: 00,
-  popis: "toto se zobrazí když to rozkliknou"
+  popis: ""
 }
  
 {
