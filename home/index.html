@@ -106,6 +106,212 @@ Společně se podíváme na témata, která propojují historii, současnost a s
         </div>
     </main>
 
+<section id="harmonogram-festivalu" class="section info-section" style="background-color: var(--light-bg); border-top: 1px solid rgba(7, 29, 106, 0.1);">
+    <div class="container">
+        <h2 style="text-align: center; color: var(--primary);">Program – Samet na N8</h2>
+        
+        <div class="samet-schedule-board">
+            <div class="samet-timeline-header">
+                <div class="corner-brand-label">Samet na N8</div>
+                <div class="hour-grid-mark" style="--h-idx: 0;">14:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 1;">15:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 2;">16:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 3;">17:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 4;">18:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 5;">19:00</div>
+                <div class="hour-grid-mark" style="--h-idx: 6;">20:00</div>
+            </div>
+
+            <div class="samet-schedule-body">
+                <div class="samet-row" data-room="KOTELNA">
+                    <div class="room-vertical-title color-kotelna">KOTELNA</div>
+                    <div class="room-events-track"></div>
+                </div>
+
+                <div class="samet-row" data-room="PŘÁDELNA">
+                    <div class="room-vertical-title color-pradelna">PŘÁDELNA</div>
+                    <div class="room-events-track"></div>
+                </div>
+
+                <div class="samet-row row-doprovodne-stacked" data-room="DOPROVODNÉ PROGRAMY">
+                    <div class="room-vertical-title color-doprovodne">DOPROVODNÉ PROGRAMY</div>
+                    <div class="room-events-track doprovodne-vertical-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="samet-event-bubble" class="samet-popup-bubble" style="display: none;">
+    <span class="popup-bubble-close">&times;</span>
+    <div class="popup-bubble-time"></div>
+    <h4 class="popup-bubble-title"></h4>
+    <p class="popup-bubble-desc"></p>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const bubble = document.getElementById("samet-event-bubble");
+    const START_H = 14;
+    const TOTAL_H = 6;
+
+    function getTimelinePosition(hour, minute) {
+        const absoluteHours = hour + (minute / 60);
+        const relativeHours = absoluteHours - START_H;
+        return (relativeHours / TOTAL_H) * 100;
+    }
+
+    fetch('anotace.txt')
+        .then(res => {
+            if (!res.ok) throw new Error('Nelze načíst soubor anotace.txt.');
+            return res.text();
+        })
+        .then(rawText => {
+            const events = [];
+            const regexBlocks = /\{([\s\(\S\)]*?)\}/g;
+            let matchBlock;
+            
+            while ((matchBlock = regexBlocks.exec(rawText)) !== null) {
+                try {
+                    const cleanBlock = matchBlock[1];
+                    if (!cleanBlock.trim()) continue;
+
+                    const nazevM = cleanBlock.match(/nazev\s*:\s*["']([^"']+)["']/);
+                    const barvaM = cleanBlock.match(/barva\s*:\s*["']([^"']+)["']/);
+                    const odHodM = cleanBlock.match(/odHod\s*:\s*(\d+)/);
+                    const odMinM = cleanBlock.match(/odMin\s*:\s*(\d+)/);
+                    const doHodM = cleanBlock.match(/doHod\s*:\s*(\d+)/);
+                    const doMinM = cleanBlock.match(/doMin\s*:\s*(\d+)/);
+                    const popisM = cleanBlock.match(/popis\s*:\s*["']([\s\(\S\)]*?)["']\s*\$/) || cleanBlock.match(/popis\s*:\s*["']([\s\(\S\)]*?)["']/);
+
+                    if (nazevM && barvaM && odHodM) {
+                        events.push({
+                            nazev: nazevM[1].trim(),
+                            barva: barvaM[1].trim(),
+                            odHod: parseInt(odHodM[1], 10),
+                            odMin: odMinM ? parseInt(odMinM[1], 10) : 0,
+                            doHod: doHodM ? parseInt(doHodM[1], 10) : 0,
+                            doMin: doMinM ? parseInt(doMinM[1], 10) : 0,
+                            popis: popisM ? popisM[1].trim() : "",
+                            absoluteStart: parseInt(odHodM[1], 10) * 60 + (odMinM ? parseInt(odMinM[1], 10) : 0)
+                        });
+                    }
+                } catch (e) {
+                    console.error("Chyba parsování bloku: ", e);
+                }
+            }
+
+            const roomsData = { "KOTELNA": [], "PŘÁDELNA": [], "DOPROVODNÉ PROGRAMY": [] };
+
+            events.forEach(event => {
+                let targetRoom = "DOPROVODNÉ PROGRAMY";
+                const upperName = event.nazev.toUpperCase();
+                const cleanColor = event.barva.toUpperCase().trim();
+                
+                if (cleanColor === "#0000FF" || upperName.includes("KAPELA") || upperName.includes("PUBKVÍZ")) {
+                    targetRoom = "KOTELNA";
+                } else if (cleanColor === "#D82C2C" || upperName.includes("BESEDA") || upperName.includes("MARTA") || upperName.includes("KVÍZ")) {
+                    targetRoom = "PŘÁDELNA";
+                }
+                event.computedRoom = targetRoom;
+                roomsData[targetRoom].push(event);
+            });
+
+            Object.keys(roomsData).forEach(room => {
+                roomsData[room].sort((a, b) => a.absoluteStart - b.absoluteStart);
+            });
+
+            events.forEach(event => {
+                const targetRoom = event.computedRoom;
+                const track = document.querySelector(`.samet-row[data-room="${targetRoom}"] .room-events-track`);
+                if (!track) return;
+
+                const formatMin = (m) => String(m).padStart(2, '0');
+                const timeLabel = `${event.odHod}:${formatMin(event.odMin)} - ${event.doHod}:${formatMin(event.doMin)}`;
+
+                const eventNode = document.createElement('div');
+                eventNode.className = `samet-event-node room-${targetRoom.toLowerCase().replace(/[^a-z]/g, '')}`;
+                
+                if (targetRoom !== "DOPROVODNÉ PROGRAMY") {
+                    const startPercent = getTimelinePosition(event.odHod, event.odMin);
+                    const endPercent = getTimelinePosition(event.doHod, event.doMin);
+                    
+                    eventNode.style.left = `${startPercent}%`;
+                    eventNode.style.width = `${endPercent - startPercent}%`;
+
+                    const currentRoomEvents = roomsData[targetRoom];
+                    const currentIndex = currentRoomEvents.indexOf(event);
+                    let nextEventStartPercent = 100;
+
+                    if (currentIndex !== -1 && currentIndex < currentRoomEvents.length - 1) {
+                        const nextEvent = currentRoomEvents[currentIndex + 1];
+                        nextEventStartPercent = getTimelinePosition(nextEvent.odHod, nextEvent.odMin);
+                    }
+
+                    const maxTextWidthPercent = nextEventStartPercent - startPercent;
+                    
+                    const widthRatio = (maxTextWidthPercent / (endPercent - startPercent)) * 100;
+
+                    let titleHTML = `<div class="node-title-text" style="color: ${event.barva};">${event.nazev}</div>`;
+                    if (event.nazev.toLowerCase().includes("zpívá") || event.nazev.toLowerCase().includes("zpjvá")) {
+                        const parts = event.nazev.split(/(?=zpívá|zpjvá)/i);
+                        titleHTML = `<div class="node-title-text" style="color: ${event.barva};">${parts[0].trim()}</div>
+                                     <div class="node-subtitle-text" style="color: ${event.barva};">${parts[1] ? parts[1].trim() : ''}</div>`;
+                    } else if (event.nazev.toLowerCase().includes("jaromír polášek")) {
+                        const parts = event.nazev.split(/(?=jaromír)/i);
+                        titleHTML = `<div class="node-title-text" style="color: ${event.barva};">${parts[0].trim()}</div>
+                                     <div class="node-subtitle-text" style="color: ${event.barva};">${parts[1] ? parts[1].trim() : ''}</div>`;
+                    } else if (event.nazev.toLowerCase().includes("rudolf merkner")) {
+                        const parts = event.nazev.split(/(?=rudolf)/i);
+                        titleHTML = `<div class="node-title-text" style="color: ${event.barva};">${parts[0].trim()}</div>
+                                     <div class="node-subtitle-text" style="color: ${event.barva};">${parts[1] ? parts[1].trim() : ''}</div>`;
+                    }
+
+                    eventNode.innerHTML = `
+                        <div class="node-top-bar" style="background-color: ${event.barva};"></div>
+                        <div class="node-text-container" style="width: ${widthRatio}%; max-width: ${widthRatio}%;">
+                            <div class="node-time-stamp" style="color: ${event.barva};">${timeLabel}</div>
+                            ${titleHTML}
+                        </div>
+                    `;
+                } else {
+                    eventNode.style.borderColor = event.barva;
+                    eventNode.innerHTML = `
+                        <div class="node-time-stamp">${timeLabel}</div>
+                        <div class="node-title-text">${event.nazev}</div>
+                    `;
+                }
+
+                eventNode.dataset.title = event.nazev;
+                eventNode.dataset.time = `${timeLabel} (${targetRoom})`;
+                eventNode.dataset.desc = event.popis;
+                eventNode.dataset.color = event.barva;
+
+                eventNode.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    bubble.querySelector('.popup-bubble-time').textContent = eventNode.dataset.time;
+                    bubble.querySelector('.popup-bubble-title').textContent = eventNode.dataset.title;
+                    bubble.querySelector('.popup-bubble-title').style.color = eventNode.dataset.color;
+                    bubble.querySelector('.popup-bubble-desc').textContent = eventNode.dataset.desc;
+                    
+                    bubble.style.display = 'block';
+
+                    const nodeRect = eventNode.getBoundingClientRect();
+                    bubble.style.top = `${window.scrollY + nodeRect.bottom + 8}px`;
+                    bubble.style.left = `${Math.min(window.innerWidth - 310, Math.max(15, nodeRect.left + (nodeRect.width / 2) - 145))}px`;
+                });
+
+                track.appendChild(eventNode);
+            });
+        })
+        .catch(error => console.error('Chyba harmonogramu:', error));
+
+    bubble.querySelector('.popup-bubble-close').addEventListener('click', () => bubble.style.display = 'none');
+    document.addEventListener('click', () => bubble.style.display = 'none');
+    bubble.addEventListener('click', (e) => e.stopPropagation());
+});
+</script>
+
     <footer id="kontakt">
         <div class="container">
             <p>2026 Samet na GPB</p>
