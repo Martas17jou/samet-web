@@ -1,0 +1,115 @@
+{
+  nazev: "Beseda o seriálu Vyprávěj",
+  barva: "#D82C2C",
+  odHod: 15, odMin: 0,
+  doHod: 16, doMin: 30,
+  popis: "Jak vzniká seriál, který dokáže přiblížit historii prostřednictvím příběhů obyčejných lidí? Co inspirovalo jeho vznik a kolik skutečných osudů se skrývá za jeho postavami?
+Během 90minutové přednášky a besedy se scenáristou Rudolfem Merknerem nahlédneme do zákulisí vzniku oblíbeného českého seriálu Vyprávěj. Dozvíme se, odkud autor čerpal inspiraci, jak se do seriálu promítaly skutečné životní příběhy a jak náročné je převést historické události do televizního vyprávění.
+Významná část setkání bude věnována 17. listopadu 1989 a sametové revoluci. Prostřednictvím seriálu se podíváme na to, jak se tvůrci snažili zachytit atmosféru tehdejší doby a přiblížit události, které zásadně ovlivnily naše dějiny. Na závěr besedy si účastníci budou moci ověřit své znalosti v tematickém kvízu zaměřeném na seriál Vyprávěj."
+}
+ 
+{
+  nazev: "Beseda s pamětníkem",
+  barva: "#D82C2C",
+  odHod: 18, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Jaromír Polášek byl přímým účastníkem událostí, které se odehrály ve Frýdku-Místku v roce 1989. V areálu kasáren ve Frýdku-Místku sídlil vojenský útvar 9844, dále zde byly dislokovány školní a záložní prapory pohotovostního pluku Veřejné bezpečnosti. V roce 1988 proběhlo v Bahně cvičení k udržení veřejného pořádku a potlačení demonstrací. V říjnu roku 1989 byla velmi napjatá situace mezi mládeží a státní mocí, která vyvrcholila incidentem mezi studenty Střední zemědělské školy ve Frýdku-Místku a státní mocí. Následovala restrikční opatření včetně vyloučení několika studentů ze všech škol na území republiky. Jaromír Polášek byl přímým účastníkem této události. Účastnil se také demonstrací na místeckém Náměstí lidových milicí v listopadu 1989, včetně generální stávky 27. listopadu 1989. Společně s dnes již zesnulým kolegou Petrem Bittnerem vylezl na špičku věže frýdeckého zámku, kde zvonili na zvon. Poté se vydali na demonstraci do Místku. Dne 3. ledna 1990 se Jaromír Polášek osobně zúčastnil uvítání prezidenta Václava Havla na náměstí v Místku."
+}
+
+{
+  nazev: "kapela Roubos",
+  barva: "#0000ff",
+  odHod: 16, odMin: 0,
+  doHod: 17, doMin: 0,
+  popis: "toto se zobrazí když to rozkliknou"
+}
+ 
+{
+  nazev: "kapela Cröckenband",
+  barva: "#0000ff",
+  odHod: 18, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Poslední hodina celého programu bude patřit hudbě! O závěrečnou tečku se postará kapela CRÖCKENBAND, která přinese pořádnou dávku energie a skvělou atmosféru. Přijďte si užít společný závěr festivalu, zazpívat si a zakončit celý den v rytmu hudby!
+"
+}
+ 
+{
+  nazev: "Modlitba pro Martu",
+  barva: "#D82C2C",
+  odHod: 17, odMin: 11,
+  doHod: 17, doMin: 30,
+  popis: " V 17:11 zazní v prádelně v podání Barbory Kačmaříkové píseň Modlitba pro Martu, která symbolicky připomene události 17. listopadu a odkaz sametové revoluce. "
+}
+ 
+{
+  nazev: "Sametový Pubkvíz",
+  barva: "#0000ff",
+  odHod: 17, odMin: 30,
+  doHod: 18, doMin: 00,
+  popis: "toto se zobrazí když to rozkliknou"
+}
+ 
+{
+  nazev: "Pietní místo",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: " Prostor k zastavení, vzpomínce a uctění památky těch, kteří se zasloužili o svobodu. "
+
+}
+
+{
+  nazev: "Bojovka pro děti i dospělé",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: " Vydejte se plnit zábavné úkoly, prověřte své znalosti a dovednosti a na konci si vyzvedněte odměnu!"
+}
+
+{
+  nazev: "Turnaj v céčkách",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: " Přijďte si zahrát tradiční dětskou hru a zasoutěžit si o vítězství!"
+}
+
+{
+  nazev: "Sbírka ke Dni válečných veteránů",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Zapojte se do sbírky ke Dni válečných veteránů, kterou organizuje Paměť národa. Zakoupením symbolického vlčího máku podpoříte uchovávání příběhů válečných veteránů a dalších pamětníků."
+}
+
+{
+  nazev: "Výstava Ostrava v době protektorátu",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Nahlédněte do historie Ostravy za druhé světové války prostřednictvím tematické výstavy."
+}
+
+{
+  nazev: "Stánky ADRY a Paměti národa",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Seznamte se s činností organizací, jejich projekty a příběhy lidí, na které bychom neměli zapomínat."
+}
+
+{
+  nazev: "Swap",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Dejte věcem druhou šanci! Přineste, co už nevyužijete, a třeba si na oplátku odnesete něco nového."
+}
+
+{
+  nazev: "Dopisy politickým vězňům",
+   barva: "#710f40",
+  odHod: 14, odMin: 0,
+  doHod: 19, doMin: 0,
+  popis: "Napište dopis politickým vězňům a věnujte jim pár milých slov. Připomeňte si příběhy lidí, kteří byli vězněni za své postoje a boj za svobodu. I krátký dopis může potěšit a ukázat, že na jejich osudy nezapomínáme."
+}
