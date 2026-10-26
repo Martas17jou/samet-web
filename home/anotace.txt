@@ -1,8 +1,8 @@
 {
   nazev: "Beseda o seriálu Vyprávěj",
   barva: "#D82C2C",
-  odHod: 15, odMin: 0,
-  doHod: 16, doMin: 30,
+  odHod: 14, odMin: 0,
+  doHod: 15, doMin: 30,
   popis: "Jak vzniká seriál, který dokáže přiblížit historii prostřednictvím příběhů obyčejných lidí? Co inspirovalo jeho vznik a kolik skutečných osudů se skrývá za jeho postavami?
 Během 90minutové přednášky a besedy se scenáristou Rudolfem Merknerem nahlédneme do zákulisí vzniku oblíbeného českého seriálu Vyprávěj. Dozvíme se, odkud autor čerpal inspiraci, jak se do seriálu promítaly skutečné životní příběhy a jak náročné je převést historické události do televizního vyprávění.
 Významná část setkání bude věnována 17. listopadu 1989 a sametové revoluci. Prostřednictvím seriálu se podíváme na to, jak se tvůrci snažili zachytit atmosféru tehdejší doby a přiblížit události, které zásadně ovlivnily naše dějiny. Na závěr besedy si účastníci budou moci ověřit své znalosti v tematickém kvízu zaměřeném na seriál Vyprávěj."
