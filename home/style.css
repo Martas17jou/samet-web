@@ -680,10 +680,10 @@ footer p {
 .hour-grid-mark {
     position: absolute;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: #1a1a1a;
     transform: translateX(-50%);
-    left: calc(220px + (100% - 220px) * (var(--h-idx) / 6.5));
+    left: calc(220px + (100% - 220px) * (var(--h-idx) / 6.5)); 
 }
 
 .samet-schedule-body {
@@ -719,8 +719,16 @@ footer p {
     position: relative;
     flex-grow: 1;
     min-height: 65px;
-    background-image: linear-gradient(to right, #e4e7eb 1px, transparent 1px);
-    background-size: calc((100%) / 6.5) 100%;
+    background-image: 
+        linear-gradient(to right, #e4e7eb 1px, transparent 1px), /* 13:30 */
+        linear-gradient(to right, transparent calc((0.5 / 6.5) * 100%), #e4e7eb calc((0.5 / 6.5) * 100%), #e4e7eb calc((0.5 / 6.5) * 100 + 1px), transparent calc((0.5 / 6.5) * 100 + 1px)), /* 14:00 */
+        linear-gradient(to right, transparent calc((1.5 / 6.5) * 100%), #e4e7eb calc((1.5 / 6.5) * 100%), #e4e7eb calc((1.5 / 6.5) * 100 + 1px), transparent calc((1.5 / 6.5) * 100 + 1px)), /* 15:00 */
+        linear-gradient(to right, transparent calc((2.5 / 6.5) * 100%), #e4e7eb calc((2.5 / 6.5) * 100%), #e4e7eb calc((2.5 / 6.5) * 100 + 1px), transparent calc((2.5 / 6.5) * 100 + 1px)), /* 16:00 */
+        linear-gradient(to right, transparent calc((3.5 / 6.5) * 100%), #e4e7eb calc((3.5 / 6.5) * 100%), #e4e7eb calc((3.5 / 6.5) * 100 + 1px), transparent calc((3.5 / 6.5) * 100 + 1px)), /* 17:00 */
+        linear-gradient(to right, transparent calc((4.5 / 6.5) * 100%), #e4e7eb calc((4.5 / 6.5) * 100%), #e4e7eb calc((4.5 / 6.5) * 100 + 1px), transparent calc((4.5 / 6.5) * 100 + 1px)), /* 18:00 */
+        linear-gradient(to right, transparent calc((5.5 / 6.5) * 100%), #e4e7eb calc((5.5 / 6.5) * 100%), #e4e7eb calc((5.5 / 6.5) * 100 + 1px), transparent calc((5.5 / 6.5) * 100 + 1px)), /* 19:00 */
+        linear-gradient(to right, transparent calc((6.5 / 6.5) * 100% - 1px), #e4e7eb calc((6.5 / 6.5) * 100% - 1px)); /* 20:00 */
+    background-size: 100% 100%;
 }
 
 .doprovodne-vertical-list {
