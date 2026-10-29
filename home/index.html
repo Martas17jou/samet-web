@@ -113,6 +113,7 @@ Společně se podíváme na témata, která propojují historii, současnost a s
         <div class="samet-schedule-board">
             <div class="samet-timeline-header">
                 <div class="corner-brand-label">Samet na N8</div>
+                <div class="hour-grid-mark" style="--h-idx: 0;">13:30</div>
                 <div class="hour-grid-mark" style="--h-idx: 0;">14:00</div>
                 <div class="hour-grid-mark" style="--h-idx: 1;">15:00</div>
                 <div class="hour-grid-mark" style="--h-idx: 2;">16:00</div>
@@ -152,8 +153,8 @@ Společně se podíváme na témata, která propojují historii, současnost a s
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const bubble = document.getElementById("samet-event-bubble");
-    const START_H = 14;
-    const TOTAL_H = 6;
+    const START_H = 13.5;
+    const TOTAL_H = 6.5;
 
     function getTimelinePosition(hour, minute) {
         const absoluteHours = hour + (minute / 60);
