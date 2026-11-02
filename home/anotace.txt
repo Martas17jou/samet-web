@@ -91,11 +91,11 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
 }
 
 {
-  nazev: "Stánky ADRY a Paměti národa",
+  nazev: "Stánek ADRY",
    barva: "#710f40",
   odHod: 14, odMin: 0,
   doHod: 19, doMin: 0,
-  popis: "Seznamte se s činností organizací, jejich projekty a příběhy lidí, na které bychom neměli zapomínat."
+  popis: "Seznamte se s činností organizace, jejími projekty a příběhy lidí, na které bychom neměli zapomínat."
 }
 
 {
