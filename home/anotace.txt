@@ -42,7 +42,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
 }
  
 {
-  nazev: "Sametový Pubkvíz",
+  nazev: "Pubkvíz",
   barva: "#0000ff",
   odHod: 17, odMin: 30,
   doHod: 18, doMin: 00,
