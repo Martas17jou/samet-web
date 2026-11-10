@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const upperName = event.nazev.toUpperCase();
                 const cleanColor = event.barva.toUpperCase().trim();
                 
-                if (cleanColor === "#0000FF" || upperName.includes("KAPELA") || upperName.includes("PUBKVÍZ")) {
+                if (cleanColor === "#0000FF" || upperName.includes("KAPELA")) {
                     targetRoom = "KOTELNA";
                 } else if (cleanColor === "#D82C2C" || upperName.includes("BESEDA") || upperName.includes("MARTA") || upperName.includes("KVÍZ")) {
                     targetRoom = "PŘÁDELNA";
