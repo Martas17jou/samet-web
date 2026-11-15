@@ -1,6 +1,6 @@
 {
   nazev: "Beseda o seriálu Vyprávěj",
-  barva: "#D82C2C",
+  barva: "#0000ff",
   odHod: 14, odMin: 0,
   doHod: 15, doMin: 30,
   popis: "Jak vzniká seriál, který dokáže přiblížit historii prostřednictvím příběhů obyčejných lidí? Co inspirovalo jeho vznik a kolik skutečných osudů se skrývá za jeho postavami?
@@ -10,7 +10,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
  
 {
   nazev: "Beseda s pamětníkem",
-  barva: "#D82C2C",
+  barva: "#0000ff",
   odHod: 18, odMin: 0,
   doHod: 19, doMin: 0,
   popis: "Jaromír Polášek byl přímým účastníkem událostí, které se odehrály ve Frýdku-Místku v roce 1989. V areálu kasáren ve Frýdku-Místku sídlil vojenský útvar 9844, dále zde byly dislokovány školní a záložní prapory pohotovostního pluku Veřejné bezpečnosti. V roce 1988 proběhlo v Bahně cvičení k udržení veřejného pořádku a potlačení demonstrací. V říjnu roku 1989 byla velmi napjatá situace mezi mládeží a státní mocí, která vyvrcholila incidentem mezi studenty Střední zemědělské školy ve Frýdku-Místku a státní mocí. Následovala restrikční opatření včetně vyloučení několika studentů ze všech škol na území republiky. Jaromír Polášek byl přímým účastníkem této události. Účastnil se také demonstrací na místeckém Náměstí lidových milicí v listopadu 1989, včetně generální stávky 27. listopadu 1989. Společně s dnes již zesnulým kolegou Petrem Bittnerem vylezl na špičku věže frýdeckého zámku, kde zvonili na zvon. Poté se vydali na demonstraci do Místku. Dne 3. ledna 1990 se Jaromír Polášek osobně zúčastnil uvítání prezidenta Václava Havla na náměstí v Místku."
@@ -18,7 +18,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
 
 {
   nazev: "kapela Roubos",
-  barva: "#0000ff",
+  barva: "#D82C2C",
   odHod: 16, odMin: 0,
   doHod: 17, doMin: 0,
   popis: "O hudební zážitek v odpoledních hodinách se postará lokální studentská kapela ROUBOS!"
@@ -26,7 +26,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
  
 {
   nazev: "kapela Cröckenband",
-  barva: "#0000ff",
+  barva: "#D82C2C",
   odHod: 18, odMin: 0,
   doHod: 19, doMin: 0,
   popis: "Poslední hodina celého programu bude patřit hudbě! O závěrečnou tečku se postará kapela CRÖCKENBAND, která přinese pořádnou dávku energie a skvělou atmosféru. Přijďte si užít společný závěr festivalu, zazpívat si a zakončit celý den v rytmu hudby!
@@ -35,7 +35,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
  
 {
   nazev: "Modlitba pro Martu",
-  barva: "#D82C2C",
+  barva: "#0000ff",
   odHod: 17, odMin: 11,
   doHod: 17, doMin: 30,
   popis: " V 17:11 zazní v prádelně v podání Barbory Kačmaříkové píseň Modlitba pro Martu, která symbolicky připomene události 17. listopadu a odkaz sametové revoluce. "
@@ -43,7 +43,7 @@ Významná část setkání bude věnována 17. listopadu 1989 a sametové revol
  
 {
   nazev: "Pubkvíz",
-  barva: "#D82C2C",
+  barva: "#0000ff",
   odHod: 16, odMin: 00,
   doHod: 16, doMin: 30,
   popis: ""
